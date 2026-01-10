@@ -1,0 +1,111 @@
+/* --- إعدادات الألوان  --- */
+:root {
+    --bg-page: #d1d9e6;          /* لون الخلفية الأغمق لإبراز الحاسبه */
+    --calc-body: #e0e5ec;        /* لون مادة الحاسبة */
+    --screen-inner: #d8dee8;     /* لون الشاشة المنحوتة */
+    --text-main: #4d5156;        /* لون النص المريح للعين */
+    --accent-blue: #448aff;      /* اللون الأزرق للهوية البصرية */
+    --shadow-light: rgba(255, 255, 255, 0.8);
+    --shadow-dark: rgba(163, 177, 198, 0.6); 
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-page);
+}
+
+/* --- جسم الحاسبة المتجاوب --- */
+.calculator-container {
+    width: 90%;/*لضمان التجاوب في الموبايل*/
+    max-width: 340px; /* لضمان ثبات الشكل في الشاشات الكبيرة */
+    background: var(--calc-body);
+    border-radius: 35px;
+    padding: clamp(15px, 5vw, 25px); /* حجم حشو مرن */
+    box-shadow: 5px 5px 10px var(--shadow-dark), 
+                -5px -5px 10px var(--shadow-light);
+}
+
+/* --- شاشة عرض النتائج  --- */
+.display-wrapper {
+    background: var(--screen-inner);
+    border-radius: 18px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* تثبيت الطول لمنع الاهتزاز عند اختفاء النص العلوي */
+    height: 110px; 
+    box-shadow: inset 4px 4px 8px var(--shadow-dark), 
+                inset -4px -4px 8px var(--shadow-light);
+    overflow: hidden;
+}
+
+.previous-display {
+    color: #8a8e94;
+    font-size: 0.9rem;
+    height: 20px; /* حجز مساحة دائمة */
+    margin-bottom: 4px;
+}
+
+.current-display {
+    color: var(--text-main);
+    font-size: clamp(1.8rem, 8vw, 2.2rem); /* تصغير الخط تلقائياً في الشاشات الصغيرة */
+    font-weight: 500;
+    white-space: nowrap;
+    overflow-x: auto; /* السماح بالسحب الأفقي للأرقام الطويلة  */
+}
+
+.current-display::-webkit-scrollbar { display: none; }
+
+/* --- توزيع الأزرار --- */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(8px, 3vw, 14px); /* مسافات مرنة */
+}
+
+button {
+    /* aspect-ratio لضمان بقاء الأزرار مربعة دائماً */
+    aspect-ratio: 1 / 1; 
+    width: 100%;
+    border-radius: clamp(10px, 4vw, 14px);
+    border: none;
+    font-size: clamp(1rem, 5vw, 1.2rem);
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--calc-body);
+    color: var(--text-main);
+    transition: all 0.2s ease;
+    box-shadow: 4px 4px 8px var(--shadow-dark), 
+                -4px -4px 8px var(--shadow-light);
+}
+
+button:active {
+    box-shadow: inset 3px 3px 6px var(--shadow-dark), 
+                inset -3px -3px 6px var(--shadow-light);
+    transform: scale(0.96);
+}
+
+.btn-op { color: var(--accent-blue); }
+.btn-alt { color: #ff5e5e; }
+
+button[data-equals] {
+    background: var(--accent-blue);
+    color: white;
+}
+
+.span-two {
+    grid-column: span 2;
+    aspect-ratio: auto; /* إلغاء التناسب المربع لزر الصفر  */
+    height: 100%;
+}
