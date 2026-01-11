@@ -2,6 +2,8 @@
 
 A clean, elegant, and functional web calculator built with **Native JavaScript**. Focused on Soft UI aesthetics and flawless responsiveness.
 
+---
+
 🚀 Live Demo
 You can view the live project here:[https://mohamedragabt32.github.io/pro-neumorphic-calculator/]
 
@@ -15,6 +17,14 @@ You can view the live project here:[https://mohamedragabt32.github.io/pro-neumor
 ### 🛠️ Built With
 * HTML5 & CSS3 (Grid & Flexbox).
 * Vanilla JavaScript (ES6+).
+
+## 🔮 Future Roadmap
+To make this calculator even more powerful, I plan to introduce the following features:
+* **Calculation History:** A sliding panel to view past calculations.
+* **Sound Effects:** Subtle haptic-like sounds for a more tactile experience.
+* **Scientific Mode:** Advanced mathematical functions (Square root, Exponents).
+* **Dark/Light Toggle:** User-switchable themes for different lighting conditions.
+* **Keyboard Shortcuts:** Full support for physical keyboard input.
 
 ### 🧠 Collaborative Build
 This project was crafted through a strategic collaboration with **AI (Gemini)**, blending human design direction with AI-assisted code optimization.
