@@ -2,6 +2,9 @@
 
 A clean, elegant, and functional web calculator built with **Native JavaScript**. Focused on Soft UI aesthetics and flawless responsiveness.
 
+🚀 Live Demo
+You can view the live project here:[https://mohamedragabt32.github.io/pro-neumorphic-calculator/]
+
 ---
 
 ### ✨ Highlights
